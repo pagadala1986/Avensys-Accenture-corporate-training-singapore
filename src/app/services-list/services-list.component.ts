@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-services-list',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesListComponent implements OnInit {
   homePageServices:any;
+  serviceData:Observable<any>;
   constructor() { }
 
   ngOnInit() {
@@ -76,6 +78,12 @@ export class ServicesListComponent implements OnInit {
         scrambled it to make a type specimen book.`
       }
     ]
+
+    this.serviceData = of(this.homePageServices);
+
+    this.serviceData.subscribe(res =>{
+      console.log(res);
+    })
   }
 
   trackByFn(index){

@@ -3,7 +3,7 @@
     <h1>List of Posts
       <span class="fa fa-plus-circle float-end" role="button" (click)="createPost()" title="Create new post"></span>
     </h1>
-    <section class="col-md-3" *ngFor="let service of posts,trackBy: trackByFn">
+    <section class="col-md-3" *ngFor="let service of posts | async,trackBy: trackByFn">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{service.title}}</h5>

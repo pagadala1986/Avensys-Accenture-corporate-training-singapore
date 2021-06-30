@@ -16,17 +16,18 @@ export class PostsComponent implements OnInit {
   constructor(private postService: PostsService) { }
 
   ngOnInit() {
-    this.postService.getPosts().subscribe({
-      next: data =>{
-        this.posts = data;
-      },
-      error: error =>{
-        console.log(error);
-        if(error.status===404){
-          console.log('There is an error, Please try after sometime!');
-        }
-      }
-    });
+    this.posts = this.postService.getPosts();
+    // this.postService.getPosts().subscribe({
+    //   next: data =>{
+    //     this.posts = data;
+    //   },
+    //   error: error =>{
+    //     console.log(error);
+    //     if(error.status===404){
+    //       console.log('There is an error, Please try after sometime!');
+    //     }
+    //   }
+    // });
 
     //switchMap
     const switchMapSample = this.postService.getPosts().pipe(

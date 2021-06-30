@@ -50,6 +50,12 @@ const routes: Routes = [
     path:'rxjs-operators', component:RxjsOperatorsComponent
   },
   {
+    path:'angular-material', loadChildren:()=>import('./_material/material.module').then(m=>m.MaterialModule)
+  },
+  {
+    path:'custom-pipes', loadChildren:()=> import('./_custom-pipe/_custom-pipe.module').then(m=>m.CustomPipeModule)
+  },
+  {
     path:'**',component: PageNotFoundComponent
   }
 ];

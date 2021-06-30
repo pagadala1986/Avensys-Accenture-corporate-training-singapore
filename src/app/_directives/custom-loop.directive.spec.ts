@@ -4,7 +4,10 @@ import {TemplateRef,ViewContainerRef} from '@angular/core'
 
 describe('CustomLoopDirective', () => {
   it('should create an instance', () => {
-    const directive = new CustomLoopDirective(TemplateRef<any>,ViewContainerRef);
+    let templateRef: TemplateRef<any>;
+    let viewContainerRef: ViewContainerRef
+    const directive = new CustomLoopDirective(templateRef,viewContainerRef
+      );
     expect(directive).toBeTruthy();
   });
 });
